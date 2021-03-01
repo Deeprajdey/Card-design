@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #cc2b5e;
+  --secondary-color: #753a88;
+  --tertiary-color: #f0932b; }
+
 *,
 *::after,
 *::before {
@@ -13,4 +18,84 @@ html {
 body {
   line-height: 1.6;
   font-weight: 400;
-  color: #000; }
+  color: #000;
+  height: 100vh;
+  background-image: linear-gradient(to right bottom, var(--primary-color), var(--secondary-color));
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: space-around;
+  margin-top: 16rem; }
+  .container:hover .card {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    transform: scale(1.4); }
+  .container:hover .card:not(:hover) {
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+    transform: scale(1); }
+
+.card .circle {
+  -webkit-clip-path: circle(50% at 50% 0);
+  clip-path: circle(66% at 50% 0);
+  position: relative;
+  height: 22rem;
+  color: #fff; }
+
+.card {
+  min-height: 40rem;
+  width: 30rem;
+  background-color: #fff;
+  margin: 5rem 2rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s;
+  transform: scale(1);
+  border: transparent;
+  outline: none; }
+  .card:nth-child(1) .circle {
+    background-color: var(--primary-color); }
+  .card:nth-child(1) .content a {
+    background-color: var(--primary-color); }
+  .card:nth-child(2) .circle {
+    background-color: var(--secondary-color); }
+  .card:nth-child(2) .content a {
+    background-color: var(--secondary-color); }
+  .card:nth-child(3) .circle {
+    background-color: var(--tertiary-color); }
+  .card:nth-child(3) .content a {
+    background-color: var(--tertiary-color); }
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: currentColor;
+  font-size: 5rem; }
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  min-height: 20rem; }
+
+p {
+  width: 70%;
+  text-align: justify;
+  font-size: 1.2rem; }
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 3rem 0;
+  padding: 2rem 4rem;
+  border-radius: 100px;
+  font-size: 1.2rem; }
